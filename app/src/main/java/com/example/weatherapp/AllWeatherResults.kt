@@ -35,6 +35,7 @@ class AllWeatherResults : AppCompatActivity() {
         val txtAll = findViewById<TextView>(R.id.txtAll)
         val btnPast = findViewById<Button>(R.id.btnPast)
         val btnClose = findViewById<Button>(R.id.btnClose)
+        val btnAve = findViewById<Button>(R.id.btnAve)
 
         var counter = 0
         var tableDisplaytwo: String ="Day   Min   Max   Weather Condition\n\n"
@@ -54,6 +55,11 @@ class AllWeatherResults : AppCompatActivity() {
 
         btnClose.setOnClickListener {                                                                     // close app
             finishAffinity()
+        }
+        btnAve.setOnClickListener {
+            val answer = (15+17+ 16+ 20+ -1+30+28)/7
+            val answertwo = (23+52+81+30+10+100+55)/7                                                              // average of temp
+            txtAll.text = "${answer.toString()}is min ave , ${answertwo.toString()}is max ave"
         }
     }
 }
